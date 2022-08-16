@@ -34,7 +34,7 @@ const database = await mysql.createConnection({
   database: "edvinaslipcius",
   password: "kulokas",
 });
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 app.get("/", async (req, res) => {
   const songs = await database.query("SELECT * FROM `songs` ");
