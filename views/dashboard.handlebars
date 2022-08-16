@@ -1,0 +1,36 @@
+<div class="add_song"><h3> Prideti nauja daina</h3>
+<form method="post" action="/new-song">
+  <label for="">Pavadinimas</label>
+  <input type="text" name="song_name" placeholder="Dainos pavadinimas"/>
+  <label for="">Id</label>
+  <input type="text" name="id" />
+  <label for="">Albumas</label>
+  <input type="text" name="song_album" />
+  <button type="submit">Prideti</button></div>
+</form>
+<table class="table">
+
+  <thead>
+
+    <tr>
+      <td>id</td>
+      <td>pavadinimas</td>
+      <td>albumas</td>
+
+    </tr>
+
+  </thead>
+  <tbody>
+    {{#each songs}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{song_Name}}</td>
+        <td>{{song_album}}</td>
+        <td><a href="/delete/{{id}}" class="btn btn-danger">Istrinti</a>
+        <a href="/edit/{{id}}" class="btn btn-success">redaguoti</a></td>
+        </td>
+
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
